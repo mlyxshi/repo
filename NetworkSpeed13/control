@@ -1,0 +1,9 @@
+Package: mlyx.networkspeed13
+Name: NetworkSpeed13
+Depends: mobilesubstrate, com.spark.libsparkapplist, com.spark.libsparkcolourpicker, preferenceloader, ws.hbang.common (>= 1.14), firmware (>= 12)
+Version: 1.0
+Architecture: iphoneos-arm
+Description: (Optimize for Surge) Shows upload & download speed in the status bar
+Maintainer: mlyx
+Author: Johnzaro <johnzrgnns@gmail.com>
+Section: Tweaks

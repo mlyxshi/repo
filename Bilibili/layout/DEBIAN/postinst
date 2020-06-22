@@ -1,0 +1,6 @@
+# #!/bin/sh
+# chmod 777 /var/mobile/Documents/launcher_image_2020@3x.png
+
+  
+# chmod +s /Applications/ChangeLaunchScreen.app/ChangeLaunchScreen
+# chown root:wheel /Applications/ChangeLaunchScreen.app/ChangeLaunchScreen

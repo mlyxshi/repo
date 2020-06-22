@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>CCArtwork</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>mlyx.springboardextrapreference</string>
+			<key>key</key>
+			<string>isCCArtworkEnabled</string>
+			<key>label</key>
+			<string>Enable</string>
+		</dict>
+
+
+
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>MusicBeQuiet</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>mlyx.springboardextrapreference</string>
+			<key>key</key>
+			<string>isMusicBeQuietEnabled</string>
+			<key>label</key>
+			<string>Enable</string>
+		</dict>
+
+
+
+
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>QuitAll</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>mlyx.springboardextrapreference</string>
+			<key>key</key>
+			<string>isQuitAllEnabled</string>
+			<key>label</key>
+			<string>Enable</string>
+		</dict>
+
+
+
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>CleanSpringBoard</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>mlyx.springboardextrapreference</string>
+			<key>key</key>
+			<string>isCleanSpringBoardEnabled</string>
+			<key>label</key>
+			<string>Enable</string>
+		</dict>
+
+
+
+
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>CompactMediaPlayer</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>mlyx.springboardextrapreference</string>
+			<key>key</key>
+			<string>isCompactMediaPlayerEnabled</string>
+			<key>label</key>
+			<string>Enable</string>
+		</dict>
+
+	</array>
+	<key>title</key>
+	<string>SpringBoard Extra</string>
+</dict>
+</plist>

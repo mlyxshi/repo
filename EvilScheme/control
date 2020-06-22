@@ -1,0 +1,9 @@
+Package: mlyx.evilscheme
+Name: EvilScheme
+Depends: mobilesubstrate
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: Block Github Official App UrlScheme
+Maintainer: mlyx
+Author: mlyx
+Section: Self-Use

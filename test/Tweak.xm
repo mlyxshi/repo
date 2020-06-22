@@ -1,0 +1,79 @@
+%hook BluetoothManager
++ (int)lastInitError { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); int r = %orig; HBLogDebug(@"mlyx = %d", r); return r; }
++ (id)sharedInstance { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); id r = %orig; HBLogDebug(@"mlyx = %@", r); return r; }
++ (void)setSharedInstanceQueue:(id)arg1 { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (void)enableTestMode { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (id)deviceFromIdentifier:(id)arg1 { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); id r = %orig; HBLogDebug(@"mlyx = %@", r); return r; }
+- (_Bool)isServiceSupported:(unsigned int)arg1 { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); _Bool r = %orig; HBLogDebug(@"mlyx = %d", r); return r; }
+- (id)connectedDeviceNamesThatMayBeBlacklisted { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); id r = %orig; HBLogDebug(@"mlyx = %@", r); return r; }
+- (void)_updateBluetoothState { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (void)bluetoothStateActionWithCompletion:(id)arg1 { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (void)bluetoothStateAction { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (int)bluetoothState { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); int r = %orig; HBLogDebug(@"mlyx = %d", r); return r; }
+- (void)endVoiceCommand:(id)arg1 { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (void)startVoiceCommand:(id)arg1 { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (void)setAudioConnected:(_Bool)arg1 { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (_Bool)audioConnected { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); _Bool r = %orig; HBLogDebug(@"mlyx = %d", r); return r; }
+- (void)setBlacklistEnabled:(_Bool )blacklistEnabled { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (_Bool )blacklistEnabled { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); _Bool  r = %orig; HBLogDebug(@"mlyx = %d", r); return r; }
+- (void)_connectabilityChanged { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (void)_connectedStatusChanged { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (_Bool)connected { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); _Bool r = %orig; HBLogDebug(@"mlyx = %d", r); return r; }
+- (id)connectedDevices { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); id r = %orig; HBLogDebug(@"mlyx = %@", r); return r; }
+- (id)connectingDevices { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); id r = %orig; HBLogDebug(@"mlyx = %@", r); return r; }
+- (void)setConnectable:(_Bool)arg1 { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (_Bool)connectable { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); _Bool r = %orig; HBLogDebug(@"mlyx = %d", r); return r; }
+- (void)disconnectDevicePhysicalLink:(id)arg1 { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (void)disconnectDevice:(id)arg1 { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (void)connectDevice:(id)arg1 { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (void)connectDevice:(id)arg1 withServices:(unsigned int)arg2 { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (id)localAddress { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); id r = %orig; HBLogDebug(@"mlyx = %@", r); return r; }
+- (void)_pairedStatusChanged { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (void)acceptSSP:(long long)arg1 forDevice:(id)arg2 { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (void)setPincode:(id)arg1 forDevice:(id)arg2 { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (id)pairedNonAppleHAEDevices { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); id r = %orig; HBLogDebug(@"mlyx = %@", r); return r; }
+- (id)pairedDevices { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); id r = %orig; HBLogDebug(@"mlyx = %@", r); return r; }
+- (void)unpairDevice:(id)arg1 { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (void)cancelPairing { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (void)setDevicePairingEnabled:(_Bool)arg1 { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (_Bool)devicePairingEnabled { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); _Bool r = %orig; HBLogDebug(@"mlyx = %d", r); return r; }
+- (void)setDiscoverable:(_Bool)arg1 { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (_Bool)isDiscoverable { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); _Bool r = %orig; HBLogDebug(@"mlyx = %d", r); return r; }
+- (void)_advertisingChanged { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (void)_discoveryStateChanged { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (void)_setScanState:(int)arg1 { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (void)_restartScan { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (void)setDeviceScanningEnabled:(_Bool)arg1 { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (void)scanForConnectableDevices:(unsigned int)arg1 { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (void)scanForServices:(unsigned int)arg1 { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (void)_scanForServices:(unsigned int)arg1 withMode:(int)arg2 { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (void)resetDeviceScanning { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (_Bool)deviceScanningInProgress { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); _Bool r = %orig; HBLogDebug(@"mlyx = %d", r); return r; }
+- (_Bool)deviceScanningEnabled { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); _Bool r = %orig; HBLogDebug(@"mlyx = %d", r); return r; }
+- (_Bool)wasDeviceDiscovered:(id)arg1 { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); _Bool r = %orig; HBLogDebug(@"mlyx = %d", r); return r; }
+- (void)_removeDevice:(id)arg1 { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (_Bool)isAnyoneAdvertising { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); _Bool r = %orig; HBLogDebug(@"mlyx = %d", r); return r; }
+- (_Bool)isAnyoneScanning { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); _Bool r = %orig; HBLogDebug(@"mlyx = %d", r); return r; }
+- (void)_notifyFirstDeviceUnlockCompleted { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (void)_updateBlacklistMode { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (void)_updateAirplaneModeStatus { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (void)_powerChanged { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (int)maskLocalDeviceEvents:(unsigned int)arg1 { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); int r = %orig; HBLogDebug(@"mlyx = %d", r); return r; }
+- (_Bool)setEnabled:(_Bool)arg1 { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); _Bool r = %orig; HBLogDebug(@"mlyx = %d", r); return r; }
+- (_Bool)setPowered:(_Bool)arg1 { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); _Bool r = %orig; HBLogDebug(@"mlyx = %d", r); return r; }
+- (_Bool)enabled { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); _Bool r = %orig; HBLogDebug(@"mlyx = %d", r); return r; }
+- (_Bool)powered { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); _Bool r = %orig; HBLogDebug(@"mlyx = %d", r); return r; }
+- (int)powerState { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); int r = %orig; HBLogDebug(@"mlyx = %d", r); return r; }
+- (void)showPowerPrompt { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (void)postNotificationName:(id)arg1 object:(id)arg2 error:(id)arg3 { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (void)postNotificationName:(id)arg1 object:(id)arg2 { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (void)postNotification:(id)arg1 { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (void)_postNotification:(id)arg1 { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (void)_postNotificationWithArray:(id)arg1 { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (void)dealloc { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (void)_cleanup:(_Bool)arg1 { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); %orig; }
+- (_Bool)_setup:(struct BTSessionImpl *)arg1 { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); _Bool r = %orig; HBLogDebug(@"mlyx = %d", r); return r; }
+- (_Bool)_attach { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); _Bool r = %orig; HBLogDebug(@"mlyx = %d", r); return r; }
+- (id)init { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); id r = %orig; HBLogDebug(@"mlyx = %@", r); return r; }
+- (_Bool)available { NSLog(@"mlyx %@", NSStringFromSelector(_cmd)); _Bool r = %orig; HBLogDebug(@"mlyx = %d", r); return r; }
+%end

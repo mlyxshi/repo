@@ -1,0 +1,9 @@
+Package: mlyx.flexing
+Name: FLEXing
+Depends: libflex
+Version: 1.3.0
+Architecture: iphoneos-arm
+Description: Open FLEX anywhere! Add Preference Setting to enable showing Flex window automatically when specific APP starts(For debug splash)
+Maintainer: mlyx
+Author: Tanner Bennett <thepantsthief@me.com>
+Section: Maintain

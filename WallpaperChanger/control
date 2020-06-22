@@ -1,0 +1,10 @@
+Package: mlyx.wallpaperchanger
+Name: WallpaperChanger
+Version: 1.0.1
+Depends: mobilesubstrate
+Author: Capt Inc 
+Maintainer: mlyx
+Section: Maintain
+Architecture: iphoneos-arm
+Description: Change wallpaper from command line
+

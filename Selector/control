@@ -1,0 +1,9 @@
+Package: mlyx.selector
+Name: Selector
+Depends: mobilesubstrate, ws.hbang.common
+Version: 1.0
+Architecture: iphoneos-arm
+Description: (Optimize for zh-CN) Select text to search or translate
+Maintainer: mlyx
+Author: Nepeta
+Section: Maintain

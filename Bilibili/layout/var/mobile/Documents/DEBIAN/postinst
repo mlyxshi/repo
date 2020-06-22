@@ -1,0 +1,2 @@
+#!/bin/sh
+chmod 777 /var/mobile/Documents/launcher_image_2020@3x.png

@@ -1,0 +1,9 @@
+Package: mlyx.flickplus
+Name: FlicksForAll
+Depends: mobilesubstrate, ws.hbang.common (>= 1.13)
+Version: 0.0.8
+Architecture: iphoneos-arm
+Description: iPad-like key flicks on iPhone (iOS 13) [Add missing icon]
+Maintainer: mlyx
+Author: Ninji <ninji@wuffs.org>
+Section: Maintain

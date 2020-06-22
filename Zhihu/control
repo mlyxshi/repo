@@ -1,0 +1,9 @@
+Package: mlyx.zhihu
+Name: Zhihu
+Depends: mobilesubstrate
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: Block Zhihu tracking URL which Surge can not handle 
+Maintainer: mlyx
+Author: mlyx
+Section: Tweaks
