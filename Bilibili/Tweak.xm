@@ -1,17 +1,4 @@
 
-%hook BFCLaunchSplashViewController
-//去除开屏广告window
-- (void)buildUI{
-}
-%end
-
-%hook BFCRestrictedModeTeenagersAlertView
-//青少年
--(id)init{
-  return nil;
-}
-%end
-
 
 // 屏蔽track
 %hook BFCNeuron
@@ -30,6 +17,15 @@ return nil;
 -(void)sendReport {
 }
 %end
+
+%hook BBPhoneUserSpaceMallView
+-(double)cardHeight{
+  return 0;
+}
+%end
+
+
+
 
 
 
