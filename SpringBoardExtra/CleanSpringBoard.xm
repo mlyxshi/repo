@@ -16,6 +16,12 @@
 	}
 
 	%end
+
+	%hook SBHomeGrabberView
+    - (void)setHidden:(BOOL)arg1 forReason:(id)arg2 withAnimationSettings:(id)arg3 {
+        %orig(YES, arg2, arg3);
+    }
+%end
 %end
 
 %ctor{

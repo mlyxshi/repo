@@ -17,4 +17,5 @@ SpringboardLyric_PRIVATE_FRAMEWORKS = AppSupport MediaRemote
 include $(THEOS_MAKE_PATH)/tweak.mk
 SUBPROJECTS += NeteaseMusicLyric
 SUBPROJECTS += NeteaseLyricSetting
+SUBPROJECTS += CleanNeteaseMusic
 include $(THEOS_MAKE_PATH)/aggregate.mk
