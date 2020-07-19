@@ -1,3 +1,0 @@
-@interface CLSRootViewController : UITableViewController
-
-@end
