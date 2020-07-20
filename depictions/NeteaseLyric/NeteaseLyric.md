@@ -11,7 +11,7 @@ Show Netease Music Lyric in Jailbroken iOS Device SpringBoard
 - Customize lyric window Y-axis
 
 <img src="https://raw.githubusercontent.com/mlyxshi/repo/master/depictions/NeteaseLyric/pic/pic1.png" alt="3" width="200"/>
-<img src="https://raw.githubusercontent.com/mlyxshi/repo/master/depictions/NeteaseLyric/pic/pic1.png" alt="3" width="200"/>
+<img src="https://raw.githubusercontent.com/mlyxshi/repo/master/depictions/NeteaseLyric/pic/pic2.png" alt="3" width="200"/>
 
 ## Install
 Add repo: https://mlyxshi.github.io/repo
