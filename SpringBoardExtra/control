@@ -1,9 +1,0 @@
-Package: mlyx.springboardextra
-Name: Springboard Extra
-Depends: mobilesubstrate
-Version: 0.0.1
-Architecture: iphoneos-arm
-Description: Springboard enhancement all in one
-Maintainer: mlyx
-Author: mlyx
-Section: Tweaks
