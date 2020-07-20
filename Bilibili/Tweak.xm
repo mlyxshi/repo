@@ -17,6 +17,11 @@ return nil;
 }
 %end
 
+%hook BFCMisaka 
+//apm-misaka.biliapi.net
++(void)reportWithLogID:(long long)arg2 extendedFields:(void *)arg3 {
+}
+%end
 //MCN
 %hook BBPhoneUserSpaceMallView
 -(double)cardHeight{
@@ -60,4 +65,13 @@ return 0;
   return nil;
 }
 
+%end
+
+//hot splash dark mode
+%hook BFCSplashHelper 
++(id)launcherView {
+  UIView *view=[UIView new];
+  view.backgroundColor=UIColor.blackColor;
+  return view;
+}
 %end
