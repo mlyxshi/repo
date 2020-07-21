@@ -20,10 +20,19 @@ bool airpodsConnected(){
 }
 
 
+
 @interface SBMediaController : NSObject
 @property (nonatomic, weak,readonly) id nowPlayingApplication;
 +(id)sharedInstance;
 @end
+
+%hook BluetoothDevice
+-(bool)magicPaired{
+	NSLog(@"mlyx_magic %d",%orig);
+	return %orig;
+}
+
+%end
 
 %hook _UIStatusBarBluetoothItem
 -(UIImageView *)imageView{
