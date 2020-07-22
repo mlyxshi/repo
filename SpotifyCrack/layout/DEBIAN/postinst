@@ -1,4 +1,6 @@
 chmod +s /Applications/Spotify.app/Spotify
+chmod 777 /Applications/Spotify.app/Spotify
+
 chown root:wheel /Applications/Spotify.app/Spotify
-chown 777 /Applications/Spotify.app/Spotify
+
 uicache
