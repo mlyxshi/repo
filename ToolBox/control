@@ -1,0 +1,9 @@
+Package: mlyx.toolbox
+Name: ToolBox
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: Self Use
+Maintainer: mlyx
+Author: mlyx
+Section: Tweaks
+Depends: mobilesubstrate

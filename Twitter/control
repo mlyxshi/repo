@@ -1,9 +1,0 @@
-Package: mlyx.twitter
-Name: Twitter
-Depends: mobilesubstrate
-Version: 0.0.2
-Architecture: iphoneos-arm
-Description: Remove Twitter Ads
-Maintainer: mlyx
-Author: mlyx
-Section: Tweaks

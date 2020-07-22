@@ -1,9 +1,0 @@
-Package: mlyx.globalize
-Name: Globalize
-Depends: mobilesubstrate
-Version: 0.3.2
-Architecture: iphoneos-arm
-Description: Disables almost all region differences/restrictions on iOS devices. Please run ldrestart after installation.
-Maintainer: mlyx
-Author: parrotgeek1
-Section: Maintain

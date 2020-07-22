@@ -1,9 +1,0 @@
-Package: mlyx.bilibili
-Name: BiliBili
-Depends: mobilesubstrate
-Version: 0.0.1
-Architecture: iphoneos-arm
-Description: Block tracking URL
-Maintainer: mlyx
-Author: mlyx
-Section: Tweaks

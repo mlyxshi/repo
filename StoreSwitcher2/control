@@ -1,9 +1,0 @@
-Package: mlyx.storeswitcher2
-Name: StoreSwitcher 2
-Depends: mobilesubstrate
-Version: 1.0.1
-Architecture: iphoneos-arm
-Description: Add a button to switch account in App Store account page
-Maintainer: mlyx
-Author: subdiox
-Section: Maintain
