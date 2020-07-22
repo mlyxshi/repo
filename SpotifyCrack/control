@@ -1,0 +1,9 @@
+Package: mlyx.spotifycrack
+Name: Spotify Crack
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: Spotify No Ad and Premium Feature
+Maintainer: mlyx
+Author: julioverne
+Section: Crack
+Depends: mobilesubstrate, net.angelxwind.appsyncunified

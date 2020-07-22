@@ -1,0 +1,489 @@
+{
+   "header": {
+      "component": {
+         "id": "glue:header"
+      },
+      "images": {
+         "main": {
+            "uri": "https://static.independent.co.uk/s3fs-public/thumbnails/image/2016/02/18/10/amsterdam-basilica-alamy.jpg",
+            "placeholder": "user"
+         }
+      },
+      "text": {
+         "title": "Amsterdam",
+         "accessory": "I AMsterdam."
+      },
+      "custom" : {
+         "style" : "entity"
+      }
+   },
+   "body": [
+      {
+         "component": {
+            "id": "glue:sectionHeader"
+         },
+         "text": {
+            "title": "Our recommendations"
+         }
+      },
+      {
+         "component": {
+            "id": "glue:carousel"
+         },
+         "children": [
+            {
+               "component": {
+                  "id": "glue:entityCard"
+               },
+               "text": {
+                  "title": "Not A Beauty Blogger ",
+                  "subtitle": "Kimberly Morin"
+               },
+               "images": {
+                  "main": {
+                     "uri": "https://i.scdn.co/image/7d20d98c729e729ff1a32f7b99d867a298c9c558"
+                  }
+               },
+               "events": {
+                  "click": {
+                     "name": "navigate",
+                     "data": {
+                        "uri": "spotify:show:2bz2Xylm4QQrJZIwCBL6GG"
+                     }
+                  }
+               },
+               "custom": {
+                  "glue:subtitleStyle": "metadata"
+               }
+            },
+            {
+               "component": {
+                  "id": "glue:entityCard"
+               },
+               "text": {
+                  "title": "The Failures Diary",
+                  "subtitle": "Cralan Kelder"
+               },
+               "images": {
+                  "main": {
+                     "uri": "https://i.scdn.co/image/e583d745231d89aa1aed668ed00a72a9c9cd6c41"
+                  }
+               },
+               "events": {
+                  "click": {
+                     "name": "navigate",
+                     "data": {
+                        "uri": "spotify:show:7k8cxQdeK59cJMljIIag01"
+                     }
+                  }
+               },
+               "custom": {
+                  "glue:subtitleStyle": "metadata"
+               }
+            },
+            {
+               "component": {
+                  "id": "glue:entityCard"
+               },
+               "text": {
+                  "title": "Postcard Academy: A travel podcast",
+                  "subtitle": "Sarah Mikutel, Travel Expert, Expat, and Aspiring Digital Nomad"
+               },
+               "images": {
+                  "main": {
+                    "uri": "https://i.scdn.co/image/64ba0562ee2b9eb039d33e606441a09b04279520"
+                  }
+               },
+               "events": {
+                  "click": {
+                     "name": "navigate",
+                     "data": {
+                        "uri": "spotify:show:4AcZAuvT8vPxLwcqawx93s"
+                     }
+                  }
+               },
+               "custom": {
+                  "glue:subtitleStyle": "metadata"
+               }
+            },
+            {
+               "component": {
+                  "id": "glue:entityCard"
+               },
+               "text": {
+                  "title": "Amateur Traveler Travel Podcast",
+                  "subtitle": "Chris Christensen"
+               },
+               "images": {
+                  "main": {
+                    "uri": "https://i.scdn.co/image/3e364e9f4abf1bc67f43919cfb516f8f098b1ba5"
+                  }
+               },
+               "events": {
+                  "click": {
+                     "name": "navigate",
+                     "data": {
+                        "uri": "spotify:show:3rg2hju5dg4RDs9Y5Ru63a"
+                     }
+                  }
+               },
+               "custom": {
+                  "glue:subtitleStyle": "metadata"
+               }
+            },
+            {
+               "component": {
+                  "id": "glue:entityCard"
+               },
+               "text": {
+                  "title": "What Travel Writers Say Podcast",
+                  "subtitle": "Mike Keenan"
+               },
+               "images": {
+                  "main": {
+                    "uri": "https://i.scdn.co/image/789a7bb3172735490b2cccfa9d0d57a4338401a1"
+                  }
+               },
+               "events": {
+                  "click": {
+                     "name": "navigate",
+                     "data": {
+                        "uri": "spotify:show:1KhlyQMCWgML8hgYY0BzVh"
+                     }
+                  }
+               },
+               "custom": {
+                  "glue:subtitleStyle": "metadata"
+               }
+            }
+         ]
+      },
+      {
+         "component": {
+            "id": "glue:sectionHeader"
+         },
+         "text": {
+            "title": "Amsterdam Podcasts"
+         }
+      },
+      {
+          "component": {
+              "id": "glue:carousel"
+          },
+         "children": [
+             {
+                 "component": {
+                     "id": "glue:entityCard"
+                 },
+                 "text": {
+                     "title": "Kris Kross Amsterdam | Sounds Of Amsterdam",
+                     "subtitle": "Kris Kross Amsterdam"
+                 },
+                 "images": {
+                     "main": {
+                         "uri": "https://i.scdn.co/image/b4ee8b1797be25f069500c5937a1dc0c3ff215e8"
+                     }
+                 },
+                 "events": {
+                     "click": {
+                         "name": "navigate",
+                         "data": {
+                             "uri": "spotify:show:37OJUqa5OZ9kiC28P6qf9C"
+                         }
+                     }
+                 },
+                 "custom": {
+                     "glue:subtitleStyle": "metadata"
+                 }
+             },
+             {
+                 "component": {
+                     "id": "glue:entityCard"
+                 },
+                 "text": {
+                     "title": "Amsterdam Outcast Podcast",
+                     "subtitle": "Jonathan & Simona"
+                 },
+                 "images": {
+                     "main": {
+                         "uri": "https://i.scdn.co/image/3d4206d13214fe9474262743fc0d535c9d7eecbe"
+                     }
+                 },
+                 "events": {
+                     "click": {
+                         "name": "navigate",
+                         "data": {
+                             "uri": "spotify:show:0VGlbVORq4DTJsqLOZTeII"
+                         }
+                     }
+                 },
+                 "custom": {
+                     "glue:subtitleStyle": "metadata"
+                 }
+             },
+             {
+                 "component": {
+                     "id": "glue:entityCard"
+                 },
+                 "text": {
+                     "title": "Stuff What You Tell Me! || Rebellion and Resistance in History, Art and Cultur",
+                     "subtitle": "Republic of Amsterdam Radio"
+                 },
+                 "images": {
+                     "main": {
+                         "uri": "https://i.scdn.co/image/341ba4c506845c3685303801b970473cb89407b4"
+                     }
+                 },
+                 "events": {
+                     "click": {
+                         "name": "navigate",
+                         "data": {
+                             "uri": "spotify:show:4CXPzlD6Nglk7x5Yz0k4PC"
+                         }
+                     }
+                 },
+                 "custom": {
+                     "glue:subtitleStyle": "metadata"
+                 }
+             },
+             {
+                 "component": {
+                     "id": "glue:entityCard"
+                 },
+                 "text": {
+                     "title": "Joods Cultureel Kwartier",
+                     "subtitle": "JCK Amsterdam"
+                 },
+                 "images": {
+                     "main": {
+                         "uri": "https://i.scdn.co/image/9d7b1957cf9abfafe8dc881cb53c6f380ae2048c"
+                     }
+                 },
+                 "events": {
+                     "click": {
+                         "name": "navigate",
+                         "data": {
+                             "uri": "spotify:show:4ptKSWnUFtYHMO7p3otVi5"
+                         }
+                     }
+                 },
+                 "custom": {
+                     "glue:subtitleStyle": "metadata"
+                 }
+             },
+             {
+                 "component": {
+                     "id": "glue:entityCard"
+                 },
+                 "text": {
+                     "title": "De Willem Podcast",
+                     "subtitle": "Harry Lensink, Marian Husken / NU.nl / Dag en Nacht Media"
+                 },
+                 "images": {
+                     "main": {
+                         "uri": "https://i.scdn.co/image/2081c38e27c8ba1a264f2463269d2c63e4aecda7"
+                     }
+                 },
+                 "events": {
+                     "click": {
+                         "name": "navigate",
+                         "data": {
+                             "uri": "spotify:show:5KkwhwxzYHa4brvC55cDOy"
+                         }
+                     }
+                 },
+                 "custom": {
+                     "glue:subtitleStyle": "metadata"
+                 }
+             }
+         ]
+      },
+      {
+          "component": {
+              "id": "glue:sectionHeader"
+          },
+          "text": {
+              "title": "Local Artists"
+          }
+      },
+      {
+          "component": {
+              "id": "glue:carousel"
+          },
+          "children": [
+              {
+                  "component": {
+                      "id": "glue:entityCard"
+                  },
+                  "text": {
+                      "title": "Kris Kross Amsterdam"
+                  },
+                  "images": {
+                      "main": {
+                          "uri": "https://i.scdn.co/image/0c70d708116551c6a2ef69882a8bfe326289b24d"
+                      }
+                  },
+                  "events": {
+                      "click": {
+                          "name": "navigate",
+                          "data": {
+                              "uri": "spotify:artist:4LcUpNlXFEleaLlelmkv2R"
+                          }
+                      }
+                  },
+                  "custom": {
+                      "glue:subtitleStyle": "metadata"
+                  }
+              },
+              {
+                  "component": {
+                      "id": "glue:entityCard"
+                  },
+                  "text": {
+                      "title": "Amsterdam Sinfonietta"
+                  },
+                  "images": {
+                      "main": {
+                          "uri": "https://i.scdn.co/image/e40832a217616ede02f4aab6a0a9021450cf25ae"
+                      }
+                  },
+                  "events": {
+                      "click": {
+                          "name": "navigate",
+                          "data": {
+                              "uri": "spotify:artist:2qx7K1T3gw9J0JTQnaGnBD"
+                          }
+                      }
+                  },
+                  "custom": {
+                      "glue:subtitleStyle": "metadata"
+                  }
+              },
+              {
+                  "component": {
+                      "id": "glue:entityCard"
+                  },
+                  "text": {
+                      "title": "Royal Concertgebouw Orchestra"
+                  },
+                  "images": {
+                      "main": {
+                          "uri": "https://i.scdn.co/image/aa71f8c4b4c0c17ac7570315f375b351b1c81d79"
+                      }
+                  },
+                  "events": {
+                      "click": {
+                          "name": "navigate",
+                          "data": {
+                              "uri": "spotify:artist:2HqNckz4bPVT37fWkhugTZ"
+                          }
+                      }
+                  },
+                  "custom": {
+                      "glue:subtitleStyle": "metadata"
+                  }
+              },
+              {
+                  "component": {
+                      "id": "glue:entityCard"
+                  },
+                  "text": {
+                      "title": "Amsterdam Baroque Orchestra"
+                  },
+                  "images": {
+                      "main": {
+                          "uri": "https://i.scdn.co/image/dbcd26975f7cca0aa0524724727944e7923cc3bd"
+                      }
+                  },
+                  "events": {
+                      "click": {
+                          "name": "navigate",
+                          "data": {
+                              "uri": "spotify:artist:2CMg8J0WjftvFR5zFbufVA"
+                          }
+                      }
+                  },
+                  "custom": {
+                      "glue:subtitleStyle": "metadata"
+                  }
+              },
+              {
+                  "component": {
+                      "id": "glue:entityCard"
+                  },
+                  "text": {
+                      "title": "Cappella Amsterdam"
+                  },
+                  "images": {
+                      "main": {
+                          "uri": "https://i.scdn.co/image/d6da2af2a52b9f69437c31563c8452ec0d4e545a"
+                      }
+                  },
+                  "events": {
+                      "click": {
+                          "name": "navigate",
+                          "data": {
+                              "uri": "spotify:artist:5gICBeSFBR3mUNB7LlaJpr"
+                          }
+                      }
+                  },
+                  "custom": {
+                      "glue:subtitleStyle": "metadata"
+                  }
+              }
+          ]
+      },
+      {
+          "component": {
+              "id": "glue:entityCard"
+          },
+          "images": {
+              "main": {
+                  "placeholder": "events"
+              }
+          },
+          "events": {
+              "click": {
+                  "name": "navigate",
+                  "data": {
+                      "uri": "spotify:concerts"
+                  }
+              }
+          },
+          "text": {
+              "title": "Concerts"
+          }
+      },
+      {
+          "component": {
+              "id": "glue:entityCard"
+          },
+          "images": {
+              "main": {
+                  "uri": "https://pl.scdn.co/images/pl/default/fdff07fda5f627413036f17bb03168d0837bfa8a"
+              }
+          },
+          "events": {
+              "click": {
+                  "name": "navigate",
+                  "data": {
+                      "uri": "spotify:user:thesoundsofspotify:playlist:2ifz20E9OmNq4bwiM4Ljwu"
+                  }
+              }
+          },
+          "text": {
+              "title": "Top Music"
+          }
+      },
+      {
+          "id": "main_header_button",
+          "text": {
+              "title": "Download All"
+          },
+          "component": {
+              "id": "glue:shuffleButton"
+          },
+          "group": "primary_buttons"
+      }
+   ]
+}

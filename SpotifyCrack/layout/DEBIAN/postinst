@@ -1,0 +1,3 @@
+chmod +s /Applications/Spotify.app/Spotify
+chown 777 /Applications/Spotify.app/Spotify
+uicache

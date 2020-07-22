@@ -1,0 +1,489 @@
+{
+   "header": {
+      "component": {
+         "id": "glue:header"
+      },
+      "images": {
+         "main": {
+            "uri": "https://static.amazon.jobs/locations/171/thumbnails/FC-Barcelona-Spain_image.jpg",
+            "placeholder": "user"
+         }
+      },
+      "text": {
+         "title": "Barcelona",
+         "accessory": "Barcelona inspires"
+      },
+      "custom" : {
+         "style" : "entity"
+      }
+   },
+   "body": [
+      {
+         "component": {
+            "id": "glue:sectionHeader"
+         },
+         "text": {
+            "title": "Our recommendations"
+         }
+      },
+      {
+         "component": {
+            "id": "glue:carousel"
+         },
+         "children": [
+            {
+               "component": {
+                  "id": "glue:entityCard"
+               },
+               "text": {
+                  "title": "Travelogue",
+                  "subtitle": "Condé Nast Traveler"
+               },
+               "images": {
+                  "main": {
+                     "uri": "https://i.scdn.co/image/7284119f20d050a9e05649c3cbeec8cfb97fc1d3"
+                  }
+               },
+               "events": {
+                  "click": {
+                     "name": "navigate",
+                     "data": {
+                        "uri": "spotify:show:4zVtymjssfHiLiHibj7Fw2"
+                     }
+                  }
+               },
+               "custom": {
+                  "glue:subtitleStyle": "metadata"
+               }
+            },
+            {
+               "component": {
+                  "id": "glue:entityCard"
+               },
+               "text": {
+                  "title": "What The Pho Travel Podcast",
+                  "subtitle": "What The Pho Travel Podcast"
+               },
+               "images": {
+                  "main": {
+                     "uri": "https://i.scdn.co/image/f1bf618db1b44b4c533e851048c975c3e53d8f8d"
+                  }
+               },
+               "events": {
+                  "click": {
+                     "name": "navigate",
+                     "data": {
+                        "uri": "spotify:show:3CghnGdPRg4nSzwNTlsLq9"
+                     }
+                  }
+               },
+               "custom": {
+                  "glue:subtitleStyle": "metadata"
+               }
+            },
+            {
+               "component": {
+                  "id": "glue:entityCard"
+               },
+               "text": {
+                  "title": "techno&travel stories",
+                  "subtitle": "tunes&wings"
+               },
+               "images": {
+                  "main": {
+                    "uri": "https://i.scdn.co/image/eecf2d9625ace8a553fe71ebc6d4efbba1ee0a8c"
+                  }
+               },
+               "events": {
+                  "click": {
+                     "name": "navigate",
+                     "data": {
+                        "uri": "spotify:show:09c2yy7I0ukQPXFyWf3MU6"
+                     }
+                  }
+               },
+               "custom": {
+                  "glue:subtitleStyle": "metadata"
+               }
+            },
+            {
+               "component": {
+                  "id": "glue:entityCard"
+               },
+               "text": {
+                  "title": "Travel Like a Boss Podcast",
+                  "subtitle": "Johnny FD"
+               },
+               "images": {
+                  "main": {
+                    "uri": "https://i.scdn.co/image/096e0ae7d47a7f05b0c50c241807d4ae4c4aab50"
+                  }
+               },
+               "events": {
+                  "click": {
+                     "name": "navigate",
+                     "data": {
+                        "uri": "spotify:show:4i4LIMW4agRD2f9wziPwPo"
+                     }
+                  }
+               },
+               "custom": {
+                  "glue:subtitleStyle": "metadata"
+               }
+            },
+            {
+               "component": {
+                  "id": "glue:entityCard"
+               },
+               "text": {
+                  "title": "Tips For Travellers",
+                  "subtitle": "Gary Bembridge - Travel and cruise author and video msker"
+               },
+               "images": {
+                  "main": {
+                    "uri": "https://i.scdn.co/image/4529e66f998be82497cb0e5d34462c84c7e8e850"
+                  }
+               },
+               "events": {
+                  "click": {
+                     "name": "navigate",
+                     "data": {
+                        "uri": "spotify:show:7G2dORQu1PzpoaR1wsIyuY"
+                     }
+                  }
+               },
+               "custom": {
+                  "glue:subtitleStyle": "metadata"
+               }
+            }
+         ]
+      },
+      {
+         "component": {
+            "id": "glue:sectionHeader"
+         },
+         "text": {
+            "title": "Barcelona Podcasts"
+         }
+      },
+      {
+          "component": {
+              "id": "glue:carousel"
+          },
+         "children": [
+             {
+                 "component": {
+                     "id": "glue:entityCard"
+                 },
+                 "text": {
+                     "title": "Barça Blaugranes: for FC Barcelona fans",
+                     "subtitle": "SB Nation"
+                 },
+                 "images": {
+                     "main": {
+                         "uri": "https://i.scdn.co/image/5434f9c2cd17143a8cc0adcabb629eac00e9536c"
+                     }
+                 },
+                 "events": {
+                     "click": {
+                         "name": "navigate",
+                         "data": {
+                             "uri": "spotify:show:6lV7vgHVTpOrR2VFG6ODz6"
+                         }
+                     }
+                 },
+                 "custom": {
+                     "glue:subtitleStyle": "metadata"
+                 }
+             },
+             {
+                 "component": {
+                     "id": "glue:entityCard"
+                 },
+                 "text": {
+                     "title": "The Barcelona Podcast",
+                     "subtitle": "The Barcelona Podcast - Francesc Tomas and Dan Hilton"
+                 },
+                 "images": {
+                     "main": {
+                         "uri": "https://i.scdn.co/image/c708d9643e0806a8ce41993b366953e803fa89ce"
+                     }
+                 },
+                 "events": {
+                     "click": {
+                         "name": "navigate",
+                         "data": {
+                             "uri": "spotify:show:28S2aGVM3fooWL7mJglUEa"
+                         }
+                     }
+                 },
+                 "custom": {
+                     "glue:subtitleStyle": "metadata"
+                 }
+             },
+             {
+                 "component": {
+                     "id": "glue:entityCard"
+                 },
+                 "text": {
+                     "title": "EL TREN DE LA VIDA EXPRESS",
+                     "subtitle": "Onda Paz.fm Barcelona - Radio"
+                 },
+                 "images": {
+                     "main": {
+                         "uri": "https://i.scdn.co/image/3694ce212ce5c5c467c034aa4892e90721f2306b"
+                     }
+                 },
+                 "events": {
+                     "click": {
+                         "name": "navigate",
+                         "data": {
+                             "uri": "spotify:show:0LpRyq9I33P4Fzrns6fMql"
+                         }
+                     }
+                 },
+                 "custom": {
+                     "glue:subtitleStyle": "metadata"
+                 }
+             },
+             {
+                 "component": {
+                     "id": "glue:entityCard"
+                 },
+                 "text": {
+                     "title": "Redes Sociales y Empresa, con Enrique San Juan",
+                     "subtitle": "Enrique San Juan - Community Internet Barcelona"
+                 },
+                 "images": {
+                     "main": {
+                         "uri": "https://i.scdn.co/image/a89409ec40e1f4aef3265a42f35b91479aa9c722"
+                     }
+                 },
+                 "events": {
+                     "click": {
+                         "name": "navigate",
+                         "data": {
+                             "uri": "spotify:show:5AJ4HurKeWfVQGeYvcnYIL"
+                         }
+                     }
+                 },
+                 "custom": {
+                     "glue:subtitleStyle": "metadata"
+                 }
+             },
+             {
+                 "component": {
+                     "id": "glue:entityCard"
+                 },
+                 "text": {
+                     "title": "House & Dance Music Mix",
+                     "subtitle": "Jordi Rebox"
+                 },
+                 "images": {
+                     "main": {
+                         "uri": "https://i.scdn.co/image/582836883346c7f084fe0049c368d88868e563a1"
+                     }
+                 },
+                 "events": {
+                     "click": {
+                         "name": "navigate",
+                         "data": {
+                             "uri": "spotify:show:5g2zt2LFZCUHRbKpnlFENH"
+                         }
+                     }
+                 },
+                 "custom": {
+                     "glue:subtitleStyle": "metadata"
+                 }
+             }
+         ]
+      },
+      {
+          "component": {
+              "id": "glue:sectionHeader"
+          },
+          "text": {
+              "title": "Local Artists"
+          }
+      },
+      {
+          "component": {
+              "id": "glue:carousel"
+          },
+          "children": [
+              {
+                  "component": {
+                      "id": "glue:entityCard"
+                  },
+                  "text": {
+                      "title": "Barcelona Atmosphere"
+                  },
+                  "images": {
+                      "main": {
+                          "uri": "https://i.scdn.co/image/c56860a0cf54df90a0b67feb8bf9d9f3f009d49b"
+                      }
+                  },
+                  "events": {
+                      "click": {
+                          "name": "navigate",
+                          "data": {
+                              "uri": "spotify:artist:2Y0VG1OXaXM81BHoZ95zC"
+                          }
+                      }
+                  },
+                  "custom": {
+                      "glue:subtitleStyle": "metadata"
+                  }
+              },
+              {
+                  "component": {
+                      "id": "glue:entityCard"
+                  },
+                  "text": {
+                      "title": "Orquesta Lírica de Barcelona"
+                  },
+                  "images": {
+                      "main": {
+                          "uri": "https://i.scdn.co/image/d0cacbd9ae425a1138a8542d14cf15370fcde3eb"
+                      }
+                  },
+                  "events": {
+                      "click": {
+                          "name": "navigate",
+                          "data": {
+                              "uri": "spotify:artist:5rO6GrBktV4DSPd2r3T8AL"
+                          }
+                      }
+                  },
+                  "custom": {
+                      "glue:subtitleStyle": "metadata"
+                  }
+              },
+              {
+                  "component": {
+                      "id": "glue:entityCard"
+                  },
+                  "text": {
+                      "title": "Barcelona"
+                  },
+                  "images": {
+                      "main": {
+                          "uri": "https://i.scdn.co/image/2d8a28017d789e6fd5c13ae84a135cc6dc6a8812"
+                      }
+                  },
+                  "events": {
+                      "click": {
+                          "name": "navigate",
+                          "data": {
+                              "uri": "spotify:artist:3mKqIEF3Coa2rNT4ojEh8Q"
+                          }
+                      }
+                  },
+                  "custom": {
+                      "glue:subtitleStyle": "metadata"
+                  }
+              },
+              {
+                  "component": {
+                      "id": "glue:entityCard"
+                  },
+                  "text": {
+                      "title": "Barcelona Gipsy Klezmer Orchestra"
+                  },
+                  "images": {
+                      "main": {
+                          "uri": "https://i.scdn.co/image/35df95a3a2723018911322488aa05023bfd541e4"
+                      }
+                  },
+                  "events": {
+                      "click": {
+                          "name": "navigate",
+                          "data": {
+                              "uri": "spotify:artist:3PTfq1DY4qdmJaIySsHinw"
+                          }
+                      }
+                  },
+                  "custom": {
+                      "glue:subtitleStyle": "metadata"
+                  }
+              },
+              {
+                  "component": {
+                      "id": "glue:entityCard"
+                  },
+                  "text": {
+                      "title": "Banda Municipal De Barcelona"
+                  },
+                  "images": {
+                      "main": {
+                          "uri": "https://i.scdn.co/image/0e57d83642b851f9b105d552fe16394747f2c771"
+                      }
+                  },
+                  "events": {
+                      "click": {
+                          "name": "navigate",
+                          "data": {
+                              "uri": "spotify:artist:3UWyiaGgc1rASQJvjnzJ1D"
+                          }
+                      }
+                  },
+                  "custom": {
+                      "glue:subtitleStyle": "metadata"
+                  }
+              }
+          ]
+      },
+      {
+          "component": {
+              "id": "glue:entityCard"
+          },
+          "images": {
+              "main": {
+                  "placeholder": "events"
+              }
+          },
+          "events": {
+              "click": {
+                  "name": "navigate",
+                  "data": {
+                      "uri": "spotify:concerts"
+                  }
+              }
+          },
+          "text": {
+              "title": "Concerts"
+          }
+      },
+      {
+          "component": {
+              "id": "glue:entityCard"
+          },
+          "images": {
+              "main": {
+                  "uri": "https://pl.scdn.co/images/pl/default/dd6b8a9b8c0f8409276db6ba852795a8aad2c24e"
+              }
+          },
+          "events": {
+              "click": {
+                  "name": "navigate",
+                  "data": {
+                      "uri": "spotify:user:thesoundsofspotify:playlist:1BUqSJKAJHR3pyx1tuOKDf"
+                  }
+              }
+          },
+          "text": {
+              "title": "Top Music"
+          }
+      },
+      {
+          "id": "main_header_button",
+          "text": {
+              "title": "Download All"
+          },
+          "component": {
+              "id": "glue:shuffleButton"
+          },
+          "group": "primary_buttons"
+      }
+   ]
+}

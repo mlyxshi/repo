@@ -1,0 +1,489 @@
+{
+   "header": {
+      "component": {
+         "id": "glue:header"
+      },
+      "images": {
+         "main": {
+            "uri": "https://d2z6c3c3r6k4bx.cloudfront.net/uploads/event/logo/1053664/3d32524b03040a6202008072a8f24b6a.jpg",
+            "placeholder": "user"
+         }
+      },
+      "text": {
+         "title": "London",
+         "accessory": "Totally LondON"
+      },
+      "custom" : {
+         "style" : "entity"
+      }
+   },
+   "body": [
+      {
+         "component": {
+            "id": "glue:sectionHeader"
+         },
+         "text": {
+            "title": "Our recommendations"
+         }
+      },
+      {
+         "component": {
+            "id": "glue:carousel"
+         },
+         "children": [
+            {
+               "component": {
+                  "id": "glue:entityCard"
+               },
+               "text": {
+                  "title": "Life\u0027s Lost Luggage - Travel the world for free",
+                  "subtitle": "Ben Bryant"
+               },
+               "images": {
+                  "main": {
+                     "uri": "https://i.scdn.co/image/14f466cef6ce91bc2ceaeb76f1e4b7bf53823919"
+                  }
+               },
+               "events": {
+                  "click": {
+                     "name": "navigate",
+                     "data": {
+                        "uri": "spotify:show:2OqMzcu04ZrPzMgJkpTJQC"
+                     }
+                  }
+               },
+               "custom": {
+                  "glue:subtitleStyle": "metadata"
+               }
+            },
+            {
+               "component": {
+                  "id": "glue:entityCard"
+               },
+               "text": {
+                  "title": "Irreplaceable: A History of England in 100 Places",
+                  "subtitle": "Historic England"
+               },
+               "images": {
+                  "main": {
+                     "uri": "https://i.scdn.co/image/c5dc55a45ba24d3d61528baf951e2b49656a29ca"
+                  }
+               },
+               "events": {
+                  "click": {
+                     "name": "navigate",
+                     "data": {
+                        "uri": "spotify:show:041pjbiPoB9h1jOyfvrm1U"
+                     }
+                  }
+               },
+               "custom": {
+                  "glue:subtitleStyle": "metadata"
+               }
+            },
+            {
+               "component": {
+                  "id": "glue:entityCard"
+               },
+               "text": {
+                  "title": "Crowned Magic ",
+                  "subtitle": "Caitlyn Jahn"
+               },
+               "images": {
+                  "main": {
+                    "uri": "https://i.scdn.co/image/26f559f0936b31963ed7557237d9da78ef824669"
+                  }
+               },
+               "events": {
+                  "click": {
+                     "name": "navigate",
+                     "data": {
+                        "uri": "spotify:show:1PvTcShk4nRGDr5JEn4Il8"
+                     }
+                  }
+               },
+               "custom": {
+                  "glue:subtitleStyle": "metadata"
+               }
+            },
+            {
+               "component": {
+                  "id": "glue:entityCard"
+               },
+               "text": {
+                  "title": "FASHION FEARLESS, MAKE YOUR OWN STYLE",
+                  "subtitle": "chantelle taylor"
+               },
+               "images": {
+                  "main": {
+                    "uri": "https://i.scdn.co/image/31b6952c7cdb6b045c4be3c2e77d54a908f5553b"
+                  }
+               },
+               "events": {
+                  "click": {
+                     "name": "navigate",
+                     "data": {
+                        "uri": "spotify:show:7KvJ2T7qjdl1BNxUYNkJHP"
+                     }
+                  }
+               },
+               "custom": {
+                  "glue:subtitleStyle": "metadata"
+               }
+            },
+            {
+               "component": {
+                  "id": "glue:entityCard"
+               },
+               "text": {
+                  "title": "Postcard Academy: A travel podcast",
+                  "subtitle": "Sarah Mikutel, Travel Expert, Expat, and Aspiring Digital Nomad"
+               },
+               "images": {
+                  "main": {
+                    "uri": "https://i.scdn.co/image/64ba0562ee2b9eb039d33e606441a09b04279520"
+                  }
+               },
+               "events": {
+                  "click": {
+                     "name": "navigate",
+                     "data": {
+                        "uri": "spotify:show:4AcZAuvT8vPxLwcqawx93s"
+                     }
+                  }
+               },
+               "custom": {
+                  "glue:subtitleStyle": "metadata"
+               }
+            }
+         ]
+      },
+      {
+         "component": {
+            "id": "glue:sectionHeader"
+         },
+         "text": {
+            "title": "London Podcasts"
+         }
+      },
+      {
+          "component": {
+              "id": "glue:carousel"
+          },
+         "children": [
+             {
+                 "component": {
+                     "id": "glue:entityCard"
+                 },
+                 "text": {
+                     "title": "The London Necropolis Railway",
+                     "subtitle": "The London Necropolis Railway"
+                 },
+                 "images": {
+                     "main": {
+                         "uri": "https://i.scdn.co/image/c9defebcd3d2578f14591bfedbe39279895ed0c0"
+                     }
+                 },
+                 "events": {
+                     "click": {
+                         "name": "navigate",
+                         "data": {
+                             "uri": "spotify:show:3nrkSRcazlu9OwTnjnlrzR"
+                         }
+                     }
+                 },
+                 "custom": {
+                     "glue:subtitleStyle": "metadata"
+                 }
+             },
+             {
+                 "component": {
+                     "id": "glue:entityCard"
+                 },
+                 "text": {
+                     "title": "London Real",
+                     "subtitle": "Brian Rose"
+                 },
+                 "images": {
+                     "main": {
+                         "uri": "https://i.scdn.co/image/608b5781812d41ca42cdda2c7c4f1764060e0ec2"
+                     }
+                 },
+                 "events": {
+                     "click": {
+                         "name": "navigate",
+                         "data": {
+                             "uri": "spotify:show:3IE2iSERzw6How2y3e6Z3L"
+                         }
+                     }
+                 },
+                 "custom": {
+                     "glue:subtitleStyle": "metadata"
+                 }
+             },
+             {
+                 "component": {
+                     "id": "glue:entityCard"
+                 },
+                 "text": {
+                     "title": "Improv London Podcast",
+                     "subtitle": "Improv London"
+                 },
+                 "images": {
+                     "main": {
+                         "uri": "https://i.scdn.co/image/b22bc17b0639ca6bc1696d56ae890500dd073eca"
+                     }
+                 },
+                 "events": {
+                     "click": {
+                         "name": "navigate",
+                         "data": {
+                             "uri": "spotify:show:00EfqvePSdKEjuGG1sbLFk"
+                         }
+                     }
+                 },
+                 "custom": {
+                     "glue:subtitleStyle": "metadata"
+                 }
+             },
+             {
+                 "component": {
+                     "id": "glue:entityCard"
+                 },
+                 "text": {
+                     "title": "Londoners I've Met",
+                     "subtitle": "Jess Dante"
+                 },
+                 "images": {
+                     "main": {
+                         "uri": "https://i.scdn.co/image/7f41881e5b507fefd391752099fff8cf8d7a9e3d"
+                     }
+                 },
+                 "events": {
+                     "click": {
+                         "name": "navigate",
+                         "data": {
+                             "uri": "spotify:show:2yFKqk6UMEzOTO0K5tG6LN"
+                         }
+                     }
+                 },
+                 "custom": {
+                     "glue:subtitleStyle": "metadata"
+                 }
+             },
+             {
+                 "component": {
+                     "id": "glue:entityCard"
+                 },
+                 "text": {
+                     "title": "Shout About London",
+                     "subtitle": "Shout About London"
+                 },
+                 "images": {
+                     "main": {
+                         "uri": "https://i.scdn.co/image/dcec04cdd9b9d25fb8a32b41be367136d9d5964b"
+                     }
+                 },
+                 "events": {
+                     "click": {
+                         "name": "navigate",
+                         "data": {
+                             "uri": "spotify:show:6KuLf00TfJmsBZG6QmhzQo"
+                         }
+                     }
+                 },
+                 "custom": {
+                     "glue:subtitleStyle": "metadata"
+                 }
+             }
+         ]
+      },
+      {
+          "component": {
+              "id": "glue:sectionHeader"
+          },
+          "text": {
+              "title": "Local Artists"
+          }
+      },
+      {
+          "component": {
+              "id": "glue:carousel"
+          },
+          "children": [
+              {
+                  "component": {
+                      "id": "glue:entityCard"
+                  },
+                  "text": {
+                      "title": "London Symphony Orchestra"
+                  },
+                  "images": {
+                      "main": {
+                          "uri": "https://i.scdn.co/image/4a42ecf4bccf7bcc14f484fc3254427d2225b350"
+                      }
+                  },
+                  "events": {
+                      "click": {
+                          "name": "navigate",
+                          "data": {
+                              "uri": "spotify:artist:5yxyJsFanEAuwSM5kOuZKc"
+                          }
+                      }
+                  },
+                  "custom": {
+                      "glue:subtitleStyle": "metadata"
+                  }
+              },
+              {
+                  "component": {
+                      "id": "glue:entityCard"
+                  },
+                  "text": {
+                      "title": "London Philharmonic Orchestra"
+                  },
+                  "images": {
+                      "main": {
+                          "uri": "https://i.scdn.co/image/bf87148d622227640d5c20ab5d7c13693d53f604"
+                      }
+                  },
+                  "events": {
+                      "click": {
+                          "name": "navigate",
+                          "data": {
+                              "uri": "spotify:artist:3PfJE6ebCbCHeuqO4BfNeA"
+                          }
+                      }
+                  },
+                  "custom": {
+                      "glue:subtitleStyle": "metadata"
+                  }
+              },
+              {
+                  "component": {
+                      "id": "glue:entityCard"
+                  },
+                  "text": {
+                      "title": "Royal Philharmonic Orchestra"
+                  },
+                  "images": {
+                      "main": {
+                          "uri": "https://i.scdn.co/image/4ba932b9d7157c1232a4b8531e215fc39e557f41"
+                      }
+                  },
+                  "events": {
+                      "click": {
+                          "name": "navigate",
+                          "data": {
+                              "uri": "spotify:artist:0MvSBMGRQJY3mRwIbJsqF1"
+                          }
+                      }
+                  },
+                  "custom": {
+                      "glue:subtitleStyle": "metadata"
+                  }
+              },
+              {
+                  "component": {
+                      "id": "glue:entityCard"
+                  },
+                  "text": {
+                      "title": "London Grammar"
+                  },
+                  "images": {
+                      "main": {
+                          "uri": "https://i.scdn.co/image/851f37590f89a1d91167a899bd671a1d3b29860e"
+                      }
+                  },
+                  "events": {
+                      "click": {
+                          "name": "navigate",
+                          "data": {
+                              "uri": "spotify:artist:3Bd1cgCjtCI32PYvDC3ynO"
+                          }
+                      }
+                  },
+                  "custom": {
+                      "glue:subtitleStyle": "metadata"
+                  }
+              },
+              {
+                  "component": {
+                      "id": "glue:entityCard"
+                  },
+                  "text": {
+                      "title": "Londonbeat"
+                  },
+                  "images": {
+                      "main": {
+                          "uri": "https://i.scdn.co/image/1062a89b55a536e9b016c1a6c14dc976ffc03b95"
+                      }
+                  },
+                  "events": {
+                      "click": {
+                          "name": "navigate",
+                          "data": {
+                              "uri": "spotify:artist:0gcMPgunYh4rX1UOdvZKBn"
+                          }
+                      }
+                  },
+                  "custom": {
+                      "glue:subtitleStyle": "metadata"
+                  }
+              }
+          ]
+      },
+      {
+          "component": {
+              "id": "glue:entityCard"
+          },
+          "images": {
+              "main": {
+                  "placeholder": "events"
+              }
+          },
+          "events": {
+              "click": {
+                  "name": "navigate",
+                  "data": {
+                      "uri": "spotify:concerts"
+                  }
+              }
+          },
+          "text": {
+              "title": "Concerts"
+          }
+      },
+      {
+          "component": {
+              "id": "glue:entityCard"
+          },
+          "images": {
+              "main": {
+                  "uri": "https://pl.scdn.co/images/pl/default/e507ba3b4b3cdf5b05c13f170a076f51dd059359"
+              }
+          },
+          "events": {
+              "click": {
+                  "name": "navigate",
+                  "data": {
+                      "uri": "spotify:user:thesoundsofspotify:playlist:19wzfxZp8hgp16XrLwc12e"
+                  }
+              }
+          },
+          "text": {
+              "title": "Top Music"
+          }
+      },
+      {
+          "id": "main_header_button",
+          "text": {
+              "title": "Download All"
+          },
+          "component": {
+              "id": "glue:shuffleButton"
+          },
+          "group": "primary_buttons"
+      }
+   ]
+}
