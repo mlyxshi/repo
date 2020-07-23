@@ -10,7 +10,7 @@ static float  DEVICE_HEIGHT;
 static float  WINDOW_X_PORTRAIT = 313;
 static float  WINDOW_Y_PORTRAIT = 0;
 static float  WINDOW_W = 85;
-static float  WINDOW_H = 18;
+static float  WINDOW_H = 16;
 
 //landscapeLeft mode
 static float  WINDOW_X_LANDSCAPELEFT;
