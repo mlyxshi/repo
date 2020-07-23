@@ -1,0 +1,12 @@
+Package: mlyx.preferenceloader
+Name: PreferenceLoader
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: A lightweight and modern alternative to Dustin Howett's PreferenceLoader
+Maintainer: mlyx
+Author: mlyx
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000)
+Replaces: preferenceloader
+Provides: preferenceloader (= 2.2.4)
+Conflicts: preferenceloader
