@@ -8,6 +8,6 @@ TWEAK_NAME = test
 
 test_FILES = Tweak.xm
 test_CFLAGS = -fobjc-arc
-test_PRIVATE_FRAMEWORKS = MediaRemote
+#test_PRIVATE_FRAMEWORKS = MediaRemote
 
 include $(THEOS_MAKE_PATH)/tweak.mk
