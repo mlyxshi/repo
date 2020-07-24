@@ -1,3 +1,9 @@
+@interface BBPhoneMPOtherVideoSpecialCell:UIView
+@end
+@interface BBPhoneMPOtherVideoAdCell:UIView
+@end
+@interface BBPhoneMPOtherVideoGameCell:UIView
+@end
 
 // 屏蔽track
 %hook BFCNeuron
@@ -39,24 +45,35 @@ return nil;
 
 //推荐视频广告
 %hook BBPhoneMPOtherVideoSpecialCell
-
 +(double)getHeightWithObject:(id)arg2 argv:(id)arg3 {
-return 0;
+  return 0;
+}
+- (void)layoutSubviews{
+   [self removeFromSuperview];
 }
 %end
 
 %hook BBPhoneMPOtherVideoGameCell
 +(double)getHeightWithObject:(id)arg2 argv:(id)arg3 {
-return 0;
+  return 0;
 }
+- (void)layoutSubviews{
+   [self removeFromSuperview];
+}
+
 %end
 
 %hook BBPhoneMPOtherVideoAdCell
 +(double)getHeightWithObject:(id)arg2 argv:(id)arg3 {
-return 0;
+  return 0;
+}
+- (void)layoutSubviews{
+   [self removeFromSuperview];
 }
 
 %end
+
+
 
 //青少年
 %hook BFCRestrictedModeTeenagersAlertView 
@@ -74,6 +91,21 @@ return 0;
   view.backgroundColor=UIColor.blackColor;
   return view;
 }
+%end
+
+
+%hook BFCLaunchSplashViewController
+- (void)buildUI{
+
+}
+%end
+
+//app 评价alert
+%hook BBStoreScoreAlert
+-(id)init{
+  return nil;
+}
+
 %end
 
 %ctor {

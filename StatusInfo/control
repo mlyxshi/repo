@@ -2,7 +2,7 @@ Package: mlyx.statusinfo
 Name: StatusInfo
 Version: 0.0.1
 Architecture: iphoneos-arm
-Description: An awesome MobileSubstrate tweak!
+Description: [Only Test in iPhone XS Max Resolution]
 Maintainer: mlyx
 Author: mlyx
 Section: Tweaks

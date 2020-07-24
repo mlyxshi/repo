@@ -165,7 +165,7 @@ static NSString* getMemoryStats()
 
 
     WINDOW_X_LANDSCAPELEFT = WINDOW_X_PORTRAIT;
-    WINDOW_Y_LANDSCAPELEFT = DEVICE_HEIGHT-WINDOW_W;
+    WINDOW_Y_LANDSCAPELEFT = DEVICE_HEIGHT-WINDOW_W-5;
 
 	if(orientation==1){
 		//portrait:  held upright and the home button at the bottom.

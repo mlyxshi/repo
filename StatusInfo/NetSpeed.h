@@ -9,10 +9,7 @@
 }
 - (id)init;
 - (void)updateText;
-// - (void)updateOrientation;
 - (void)updateFrame:(int) arg1;
-// - (void)updateTextColor:(UIColor *)color;
-
 @end
 
 

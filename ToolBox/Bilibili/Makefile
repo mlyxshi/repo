@@ -1,6 +1,5 @@
 ARCHS = arm64e
 TARGET = iphone:latest:13
-INSTALL_TARGET_PROCESSES = tv.danmaku.bilianime
 
 include $(THEOS)/makefiles/common.mk
 

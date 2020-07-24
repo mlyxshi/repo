@@ -1,4 +1,3 @@
-INSTALL_TARGET_PROCESSES = com.zhihu.ios
 ARCHS = arm64e
 TARGET = iphone:latest:13
 
