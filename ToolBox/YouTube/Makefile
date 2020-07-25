@@ -1,11 +1,8 @@
-ARCHS = arm64e
-TARGET = iphone:latest:13
-
 include $(THEOS)/makefiles/common.mk
 
-TWEAK_NAME = youtube
+TWEAK_NAME = YouTube
 
-youtube_FILES = Tweak.xm
-youtube_CFLAGS = -fobjc-arc
+YouTube_FILES = Tweak.xm
+YouTube_CFLAGS = -fobjc-arc
 
 include $(THEOS_MAKE_PATH)/tweak.mk

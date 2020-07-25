@@ -142,14 +142,15 @@ static NSString* getMemoryStats()
     [networkSpeedLabel setFont:[UIFont boldSystemFontOfSize:FONT_SIZE]];
     [networkSpeedLabel setTextAlignment:NSTextAlignmentCenter];
     [networkSpeedLabel setBackgroundColor:[[UIColor alloc] initWithRed:0 green:0 blue:0 alpha:0.233]];
-
+    networkSpeedLabel.layer.cornerRadius = 5;
+	[networkSpeedLabel setClipsToBounds:YES];
 
 	[networkSpeedWindow addSubview:networkSpeedLabel];
+	
   
     [networkSpeedWindow setWindowLevel:2000];
     [networkSpeedWindow setHidden:0];
 	//Debug
-	//networkSpeedWindow.backgroundColor = [UIColor blueColor];
      
 	[NSTimer scheduledTimerWithTimeInterval: updateInterval target: self selector: @selector(updateText) userInfo: nil repeats: YES];
     
@@ -197,6 +198,8 @@ static NSString* getMemoryStats()
     [RAMLabel setFont:[UIFont boldSystemFontOfSize:FONT_SIZE]];
     [RAMLabel setTextAlignment:NSTextAlignmentCenter];
     [RAMLabel setBackgroundColor:[[UIColor alloc] initWithRed:0 green:0 blue:0 alpha:0.233]];
+	RAMLabel.layer.cornerRadius = 5;
+	[RAMLabel setClipsToBounds:YES];
 
 
 	[RAMWindow addSubview:RAMLabel];

@@ -1,8 +1,8 @@
 Package: mlyx.toolbox
 Name: ToolBox
-Version: 0.0.1
+Version: 0.0.2
 Architecture: iphoneos-arm
-Description: Self Use
+Description: Self-Use ToolBox
 Maintainer: mlyx
 Author: mlyx
 Section: Tweaks
