@@ -1,5 +1,5 @@
 Package: mlyx.test
-Name: test
+Name: TEST
 Depends: mobilesubstrate
 Version: 0.0.1
 Architecture: iphoneos-arm

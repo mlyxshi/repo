@@ -1,8 +1,8 @@
 Package: mlyx.statusinfo
 Name: StatusInfo
-Version: 0.0.1
+Version: 0.1.0
 Architecture: iphoneos-arm
-Description: Netspeed and RAMinfo[Only Test in iPhone XS Max Resolution]
+Description: Netspeed,RAMinfo,Battery,Signal Infomation[Only Test in iPhone XS Max Resolution]
 Maintainer: mlyx
 Author: mlyx
 Section: Tweaks

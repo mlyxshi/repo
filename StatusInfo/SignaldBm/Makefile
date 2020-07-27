@@ -1,9 +1,6 @@
-export ARCHS = arm64e
-export TARGET = iphone:latest:13
-INSTALL_TARGET_PROCESSES = SpringBoard
 include $(THEOS)/makefiles/common.mk
 
-TWEAK_NAME = TEST
+TWEAK_NAME = SignaldBm
 
 $(TWEAK_NAME)_FILES = Tweak.xm
 $(TWEAK_NAME)_PRIVATE_FRAMEWORKS = MobileWiFi
