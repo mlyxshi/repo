@@ -1,169 +1,95 @@
-#import "Tweak.h"
+#include <Preferences/PSSpecifier.h>
+#include <Preferences/PSTableCell.h>
+#include <Preferences/PSViewController.h>
+#include <Preferences/PSListController.h>
 
-static BOOL Enabled=1;
-static BOOL rssi_wifi=1;
-static BOOL rssi_cell=1;
-
-static WFWiFiStateMonitor* WFMonitor;
-static NSString* getCurrentWiFidBm()
-{
-	NSString* ret = nil;
-	@try {
-		if(!WFMonitor) {
-			WFMonitor = [[%c(WFWiFiStateMonitor) alloc] init];
-		}
-		NSInteger valRssi = WFMonitor.linkQuality.rssi;
-		if(valRssi < 0) {
-			ret = [NSString stringWithFormat:@"%d", (int)valRssi];
-		}
-	} @catch(NSException*e) {
-	}
-	return ret;
-}
-
-static NSString* getCurrentCelldBm()
-{
-	NSString* ret = nil;
-	@try {
-		SBTelephonyManager* shr = [%c(SBTelephonyManager) sharedTelephonyManager];
-		CoreTelephonyClient* client = shr.coreTelephonyClient;
-		id context = [%c(CTXPCServiceSubscriptionContext) contextWithSlot:1];
-		CTServiceDescriptor* desc = [%c(CTServiceDescriptor) descriptorWithSubscriptionContext:context];
-		CTSignalStrengthMeasurements* measurements = [client getSignalStrengthMeasurements:desc error:nil];
-		NSInteger valRssi = 0;
-		if(measurements) {
-			valRssi = [measurements.rsrp?:@(0) intValue];
-		}
-		if(valRssi != 0) {
-			ret = [NSString stringWithFormat:@"%d", (int)valRssi];
-		}
-	} @catch(NSException*e) {
-	}
-	return ret;
-}
-
-@implementation UILabelSignaldBm
-@synthesize isWiFi, updater;
-- (id)init
-{
-	self = [super init];
-	
-	dispatch_async(dispatch_get_main_queue(), ^(void){
-		self.updater = [NSTimer scheduledTimerWithTimeInterval:1.0f
-                                           target:self
-                                         selector:@selector(updatedBmValue)
-                                         userInfo:nil
-                                          repeats:YES];
-	});
-	
-	[self setAdjustsFontSizeToFitWidth:YES];
-	
-	return self;
-}
-- (void)updatedBmValue
-{
-	self.text = self.isWiFi?getCurrentWiFidBm():getCurrentCelldBm();
-}
-- (void)dalloc
-{
-	if(self.updater && [self.updater isValid]) {
-		[self.updater invalidate];
-	}
-}
+@interface PSSpecifier (PreferenceLoader)
+- (void)setupIconImageWithBundle:(NSBundle *)bundle;
+- (void)pl_setupIcon;
 @end
 
+@interface PSUIPrefsListController : PSListController
+- (void)lazyLoadBundle:(PSSpecifier *)sender;
+@end
+
+@interface UIImage (Private)
++ (instancetype)imageNamed:(NSString *)name inBundle:(NSBundle *)bundle;
+@end
+
+%hook PSUIPrefsListController
+
+- (NSArray *)specifiers {
+  if (MSHookIvar<id>(self, "_specifiers") != nil) return %orig;
+  NSMutableArray *specs = [NSMutableArray new];
+  NSString *dir = @"/Library/PreferenceLoader/Preferences";
+  for (NSString *file in [[NSFileManager defaultManager] contentsOfDirectoryAtPath:dir error:nil]) {
+    NSDictionary *entry;
+    NSString *path = [dir stringByAppendingPathComponent:file];
+    if (![file.pathExtension isEqualToString:@"plist"]) 
+      continue;
+	  entry = [NSDictionary dictionaryWithContentsOfFile:path][@"entry"];
+    if (!entry) 
+      continue;     
+    PSSpecifier *specifier = [%c(PSSpecifier) new];
+    for (NSString *key in entry.allKeys){
+      [specifier setProperty:entry[key] forKey:key];
+    } 
+    specifier.name = entry[@"label"];
+    specifier.cellType = [PSTableCell cellTypeFromString:entry[@"cell"]];
+        
+		NSString *bundlePath = [NSString stringWithFormat:@"/Library/PreferenceBundles/%@.bundle", entry[@"bundle"]];
+    [specifier setProperty:bundlePath forKey:@"lazy-bundle"];
+    specifier.controllerLoadAction = @selector(lazyLoadBundle:);
+    
+    specifier.target = self;
+    MSHookIvar<SEL>(specifier, "getter") = @selector(readPreferenceValue:);
+    MSHookIvar<SEL>(specifier, "setter") = @selector(setPreferenceValue: specifier:);
+    [specifier pl_setupIcon];
+    [specs addObject:specifier];
+  }
+  if (specs.count == 0) return %orig;
+  [specs sortUsingComparator:^NSComparisonResult(PSSpecifier *a, PSSpecifier *b) {
+    return [a.name localizedCaseInsensitiveCompare:b.name];
+  }];
+  [specs insertObject:[%c(PSSpecifier) emptyGroupSpecifier] atIndex:0];
+  NSMutableArray *mutableSpecifiers = [%orig mutableCopy];
+  
+  //index0-1 给Apple
+  NSIndexSet *indexes = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(2,[specs count])];
+  [mutableSpecifiers insertObjects:specs atIndexes:indexes];
+  //[mutableSpecifiers addObjectsFromArray:specs];
+  MSHookIvar<NSArray *>(self, "_specifiers") = [mutableSpecifiers copy];
+  return MSHookIvar<NSArray *>(self, "_specifiers");
+}
 
 
-%hook _UIStatusBarWifiSignalView
-%property (retain) id labelSignaldBm;
-- (void)_updateBars
-{
-	if(Enabled&&rssi_wifi) {
-		if(self.labelSignaldBm) {
-			[self.labelSignaldBm updatedBmValue];
-		}
-		return; // no draw bars
-	}
-	%orig;
-}
-- (void)_updateCycleAnimationNow
-{
-	if(Enabled&&rssi_wifi) {
-		if(self.labelSignaldBm) {
-			[self.labelSignaldBm updatedBmValue];
-		}
-		return; // no draw bars
-	}
-	%orig;
-}
-- (void)layoutSubviews
-{
-	%orig;
-	dispatch_async(dispatch_get_main_queue(), ^(void) {
-		UIView* vAdd = [self superview];
-		if(UIView* oldV = [vAdd viewWithTag:233]) {
-			[oldV removeFromSuperview];
-		}
-		if(Enabled&&rssi_wifi) {
-			if(!self.labelSignaldBm) {
-				self.labelSignaldBm = [[UILabelSignaldBm alloc] init];
-			}
-			self.labelSignaldBm.isWiFi = YES;
-			self.labelSignaldBm.tag = 233;
-			self.labelSignaldBm.frame = self.frame;
-			[self.labelSignaldBm updatedBmValue];
-			[vAdd addSubview:self.labelSignaldBm];
-		}
-	});
-}
 %end
 
-%hook _UIStatusBarCellularSignalView
-%property (retain) id labelSignaldBm;
-- (void)_updateBars
-{
-	if(Enabled&&rssi_cell) {
-		if(self.labelSignaldBm) {
-			[self.labelSignaldBm updatedBmValue];
-		}
-		return; // no draw bars
-	}
-	%orig;
+%hook PSViewController
+
+- (NSString *)title {
+  return (!%orig || %orig.length == 0) ? self.specifier.name : %orig;
 }
-- (void)_updateCycleAnimationNow
-{
-	if(Enabled&&rssi_cell) {
-		if(self.labelSignaldBm) {
-			[self.labelSignaldBm updatedBmValue];
-		}
-		return; // no draw bars
-	}
-	%orig;
-}
-- (void)layoutSubviews
-{
-	%orig;
-	dispatch_async(dispatch_get_main_queue(), ^(void) {
-		UIView* vAdd = [self superview];
-		if(UIView* oldV = [vAdd viewWithTag:234]) {
-			[oldV removeFromSuperview];
-		}
-		if(Enabled&&rssi_cell) {
-			if(!self.labelSignaldBm) {
-				self.labelSignaldBm = [[UILabelSignaldBm alloc] init];
-			}
-			self.labelSignaldBm.isWiFi = NO;
-			self.labelSignaldBm.tag = 234;
-			self.labelSignaldBm.frame = self.frame;
-			[self.labelSignaldBm updatedBmValue];
-			[vAdd addSubview:self.labelSignaldBm];
-		}
-	});
-}
+
 %end
 
+%hook PSSpecifier
 
-%ctor{
-	dlopen("/System/Library/PrivateFrameworks/WiFiKit.framework/WiFiKit", RTLD_LAZY);		
-	%init;
+%new
+- (void)pl_setupIcon {
+  if (NSBundle *bundle = [NSBundle bundleWithPath:[self propertyForKey:@"lazy-bundle"]]) [self setupIconImageWithBundle:bundle];
+  UIImage *icon = [self propertyForKey:@"iconImage"] ? : [UIImage imageWithContentsOfFile:@"/Library/PreferenceLoader/Default.png"];
+  //无论什么size的icon保持一致的mask
+  UIGraphicsBeginImageContextWithOptions(CGSizeMake(29, 29), NO, [UIScreen mainScreen].scale);
+  CGRect iconRect = CGRectMake(0, 0, 29, 29);
+  NSBundle *mobileIconsBundle = [NSBundle bundleWithIdentifier:@"com.apple.mobileicons.framework"];
+  UIImage *mask = [UIImage imageNamed:@"TableIconMask" inBundle:mobileIconsBundle];
+  if (mask) CGContextClipToMask(UIGraphicsGetCurrentContext(), iconRect, mask.CGImage);
+  [icon drawInRect:iconRect];
+  icon = UIGraphicsGetImageFromCurrentImageContext();
+  UIGraphicsEndImageContext();
+
+  [self setProperty:icon forKey:@"iconImage"];
 }
+
+%end
