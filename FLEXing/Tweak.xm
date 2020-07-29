@@ -1,12 +1,4 @@
-//
-//  Tweak.m
-//  FLEXing
-//
-//  Created by Tanner Bennett on 2016-07-11
-//  Copyright © 2016 Tanner Bennett. All rights reserved.
-//
-
-
+#import "SparkAppList.h"
 #import "Interfaces.h"
 
 BOOL initialized = NO;
@@ -67,15 +59,17 @@ inline BOOL flexAlreadyLoaded() {
         windowsWithGestures = [NSMutableArray new];
         initialized = YES;
 
-        NSDictionary *pref = [NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Preferences/mlyx.flexing.plist"];
-        NSString *keyPath = [NSString stringWithFormat:@"FlexingEnabled-%@", [[NSBundle mainBundle] bundleIdentifier]];
-        if ([[pref objectForKey:keyPath] boolValue]) {
+        NSString* bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier]; 
+        if([SparkAppList doesIdentifier:@"mlyx.flexingsetting" andKey:@"includedApps" containBundleIdentifier:bundleIdentifier]) 
+        {
         	[[NSNotificationCenter defaultCenter] addObserver:manager
 										   selector:show
 											   name:UIApplicationDidBecomeActiveNotification
 											 object:nil];
-		}
+		
+        }
     }
+
 }
 
 %hook UIWindow

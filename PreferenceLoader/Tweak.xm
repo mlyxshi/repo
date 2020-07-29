@@ -12,7 +12,7 @@
 - (void)lazyLoadBundle:(PSSpecifier *)sender;
 @end
 
-@interface UIImage (Private)
+@interface UIImage (PreferenceLoader)
 + (instancetype)imageNamed:(NSString *)name inBundle:(NSBundle *)bundle;
 @end
 
@@ -70,16 +70,7 @@
 }
 %end
 
-%hook PSViewController
-
-// - (NSString *)title {
-//   return (!%orig || %orig.length == 0) ? self.specifier.name : %orig;
-// }
-
-%end
-
 %hook PSSpecifier
-
 %new
 - (void)pl_setupIcon {
   if (NSBundle *bundle = [NSBundle bundleWithPath:[self propertyForKey:@"lazy-bundle"]]) [self setupIconImageWithBundle:bundle];

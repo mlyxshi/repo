@@ -1,9 +1,0 @@
-Package: mlyx.preferencetest
-Name: TEST PRE
-Version: 0.0.1
-Architecture: iphoneos-arm
-Description: TEST PRE
-Maintainer: mlyx
-Section: Tweaks
-Author: mlyx
-Depends: mobilesubstrate
