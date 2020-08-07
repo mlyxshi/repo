@@ -89,3 +89,7 @@
 }
 
 %end
+
+%ctor {
+  dlopen("/usr/lib/libprefs.dylib", RTLD_LAZY);
+}
