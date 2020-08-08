@@ -18,6 +18,9 @@ NSString* bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
 
 
 /*
+0. default
+default下media remote 才能正常运作，给网易云和QQ音乐这2个最重要的使用
+
 1. AVAudioSessionCategoryOptionMixWithOthers   
 An option that indicates whether audio from this session mixes with audio from active sessions in other audio apps.
 

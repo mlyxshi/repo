@@ -1,0 +1,9 @@
+Package: mlyx.audiomix
+Name: AudioMix
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: Mix Audio
+Maintainer: mlyx
+Author: mlyx
+Section: Tweaks
+Depends: mobilesubstrate 
