@@ -59,40 +59,9 @@
   self.navigationItem.backBarButtonItem = backItem; 
   [self.navigationController pushViewController:[[BDInfoListController alloc] init] animated:YES];
 }
--(void)selectApp_{
+-(void)selectApp{
   UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
   self.navigationItem.backBarButtonItem = backItem; 
   [self.navigationController pushViewController:[[VMAPPListController alloc] init] animated:YES];
-}
-#define prefPath @"/var/mobile/Library/Preferences/com.brend0n.volumemixer.plist"
--(void)selectApp{
-  NSMutableDictionary *prefs = [[NSMutableDictionary alloc] initWithContentsOfFile:prefPath];
-  if(prefs) {
-    NSString*key=prefs[@"didShowAlert"];
-    if(key){
-      [self selectApp_];
-      return;  
-    }
-    
-  }
-
-  UIAlertController *alertController = [UIAlertController alertControllerWithTitle:VMNSLocalizedString(@"BETA_ALERT_TITLE") message:VMNSLocalizedString(@"BETA_ALERT") preferredStyle:UIAlertControllerStyleAlert];
-
-  UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:VMNSLocalizedString(@"ACTION_NO") style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {}];
-
-  UIAlertAction *okAction = [UIAlertAction actionWithTitle:VMNSLocalizedString(@"ACTION_YES") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-    dispatch_async(dispatch_get_main_queue(), ^{
-      NSMutableDictionary *prefs = [[NSMutableDictionary alloc] initWithContentsOfFile:prefPath];
-      if(!prefs) prefs=[NSMutableDictionary new];
-      prefs[@"didShowAlert"]=@YES;
-      [prefs writeToFile:prefPath atomically:YES];
-      [self selectApp_];
-    });
-  }];
-
-  [alertController addAction:cancelAction];
-  [alertController addAction:okAction];
-  [self presentViewController:alertController animated:YES completion:nil];
-  
 }
 @end

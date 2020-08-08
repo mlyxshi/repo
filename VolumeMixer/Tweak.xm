@@ -15,9 +15,6 @@
 #import "VMHookInfo.h"
 #import "VMHookAudioUnit.hpp"
 
-
-%config(generator=MobileSubstrate)
-
 BOOL enabled;
 
 VMHUDWindow*hudWindow;

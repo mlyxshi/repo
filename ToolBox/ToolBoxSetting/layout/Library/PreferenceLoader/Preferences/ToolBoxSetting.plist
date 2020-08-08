@@ -15,7 +15,7 @@
 		<key>isController</key>
 		<true/>
 		<key>label</key>
-		<string>ToolBoxSetting</string>
+		<string>ToolBox</string>
 	</dict>
 </dict>
 </plist>

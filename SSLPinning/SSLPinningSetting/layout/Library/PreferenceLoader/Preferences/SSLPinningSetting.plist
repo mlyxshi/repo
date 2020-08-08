@@ -15,7 +15,7 @@
 		<key>isController</key>
 		<true/>
 		<key>label</key>
-		<string>SSLPinningSetting</string>
+		<string>SSL Pinning</string>
 	</dict>
 </dict>
 </plist>

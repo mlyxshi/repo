@@ -15,6 +15,6 @@
 
 	</array>
 	<key>title</key>
-	<string>SSLPinningSetting</string>
+	<string>Disable SSLPinning</string>
 </dict>
 </plist>
