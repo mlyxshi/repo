@@ -1,0 +1,11 @@
+Package: com.brend0n.volumemixer
+Name: VolumeMixer
+Depends: mobilesubstrate, preferenceloader, applist, com.muirey03.libmryipc
+Version: 0.0.2
+Architecture: iphoneos-arm
+Description: add volume control for individual app
+ Note: 
+ * This package is in development, NOT all apps are supported.
+Maintainer: Brend0n <brendonjkding@126.com>
+Author: Brend0n <brendonjkding@126.com>
+Section: Tweaks
