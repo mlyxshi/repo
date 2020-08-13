@@ -1,4 +1,4 @@
-export ARCHS = arm64e
+export ARCHS = arm64e arm64
 export TARGET = iphone:latest:9
 
 TWEAK_NAME = VolumeMixer

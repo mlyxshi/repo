@@ -1,4 +1,4 @@
-ARCHS = arm64e
+ARCHS = arm64e arm64
 TARGET = iphone:latest:13
 INSTALL_TARGET_PROCESSES = Preferences
 
