@@ -261,15 +261,33 @@ void BBLoadPref(){
 }
 %end
 
+
+/*--- category
+AVAudioSessionCategoryPlayAndRecord||AVAudioSessionCategoryRecord： 录音
+AVAudioSessionCategoryPlayback： 常规音乐播放，可打断其他音频
+*/
+
+/*--- option
+0：default 只有这种情况下cc module music正常，music remote通知也正常
+2：AVAudioSessionCategoryOptionDuckOthers 混音
+*/
+
 #pragma mark AVAudioSession
 %hook AVAudioSession
 - (BOOL)setActive:(BOOL)active withOptions:(AVAudioSessionSetActiveOptions)options error:(NSError **)outError{
-  NSLog(@"mlyx AVAudio category %@, options %lu",[self category],options);
-  NSString* bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier]; 
-  if([bundleIdentifier isEqualToString:@"com.netease.cloudmusic"]||[bundleIdentifier isEqualToString:@"com.tencent.QQMusic"]){
+  NSString *category=[self category];
+  NSString *bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier]; 
+  NSLog(@"mlyx AVAudio category %@, options %lu",category,options);
+
+  //听歌识曲
+  if([category isEqualToString:@"AVAudioSessionCategoryPlayAndRecord"]||[category isEqualToString:@"AVAudioSessionCategoryRecord"]){
+    return %orig;
+  }
+
+  if([bundleIdentifier isEqualToString:@"com.netease.cloudmusic"]||[bundleIdentifier isEqualToString:@"com.tencent.QQMusic"]||[bundleIdentifier isEqualToString:@"com.spotify.client"]){
     [self setCategory:AVAudioSessionCategoryPlayback withOptions:0 error:outError];
   }else{
-    [self setCategory:[self category] withOptions:2 error:outError];
+    [self setCategory:category withOptions:2 error:outError];
   }
   
   return %orig;
