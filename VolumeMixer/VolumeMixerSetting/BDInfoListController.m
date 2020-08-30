@@ -2,148 +2,79 @@
 #import <Preferences/PSSpecifier.h>
 
 @implementation BDInfoListController
--(void)loadView{
-	[super loadView];
-    self.navigationItem.title = @"Brend0n";
+
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
-}
-- (NSArray *)specifiers {
-	if (!_specifiers) {
-		_specifiers = [NSMutableArray arrayWithCapacity:5];
-
-        PSSpecifier* spec;
-        spec = [PSSpecifier preferenceSpecifierNamed:@""
-                                              target:self
-                                              set:Nil
-                                              get:Nil
-                                              detail:Nil
-                                              cell:PSGroupCell
-                                              edit:Nil];
-        [spec setProperty:@"" forKey:@"label"];
-        [_specifiers addObject:spec];
-        
-        spec = [PSSpecifier preferenceSpecifierNamed:@"Github"
-                                              target:self
-                                                 set:NULL
-                                                 get:NULL
-                                              detail:Nil
-                                                cell:PSLinkCell
-                                                edit:Nil];
-        spec->action = @selector(open_github);
-        [spec setProperty:@YES forKey:@"hasIcon"];
-        [spec setProperty:[UIImage imageNamed:@"github" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] forKey:@"iconImage"];
-        [_specifiers addObject:spec];
-
-        spec = [PSSpecifier preferenceSpecifierNamed:@"Bilibili"
-                                              target:self
-                                                 set:NULL
-                                                 get:NULL
-                                              detail:Nil
-                                                cell:PSLinkCell
-                                                edit:Nil];
-        spec->action = @selector(open_bilibili);
-        [spec setProperty:@YES forKey:@"hasIcon"];
-        [spec setProperty:[UIImage imageNamed:@"bilibili" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] forKey:@"iconImage"];
-        [_specifiers addObject:spec];
-        spec = [PSSpecifier preferenceSpecifierNamed:@"打赏支持"
-                                              target:self
-                                                 set:NULL
-                                                 get:NULL
-                                              detail:Nil
-                                                cell:PSLinkCell
-                                                edit:Nil];
-        spec->action = @selector(open_alipay);
-        [spec setProperty:@YES forKey:@"hasIcon"];
-        [spec setProperty:[UIImage imageNamed:@"alipay" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] forKey:@"iconImage"];
-        [_specifiers addObject:spec];
-        
-
-        spec = [PSSpecifier preferenceSpecifierNamed:@"添加我的软件源"
-                                              target:self
-                                                 set:NULL
-                                                 get:NULL
-                                              detail:Nil
-                                                cell:PSLinkCell
-                                                edit:Nil];
-        spec->action = @selector(open_cydia);
-        [spec setProperty:@YES forKey:@"hasIcon"];
-        [spec setProperty:[UIImage imageNamed:@"cydia" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] forKey:@"iconImage"];
-        [_specifiers addObject:spec];
-
-        spec = [PSSpecifier preferenceSpecifierNamed:@""
-                                              target:self
-                                              set:Nil
-                                              get:Nil
-                                              detail:Nil
-                                              cell:PSGroupCell
-                                              edit:Nil];
-        [spec setProperty:@"" forKey:@"label"];
-        [_specifiers addObject:spec];
-
-        spec = [PSSpecifier preferenceSpecifierNamed:@"Follow Me"
-                                              target:self
-                                                 set:NULL
-                                                 get:NULL
-                                              detail:Nil
-                                                cell:PSLinkCell
-                                                edit:Nil];
-        spec->action = @selector(open_twitter);
-        [spec setProperty:@YES forKey:@"hasIcon"];
-        [spec setProperty:[UIImage imageNamed:@"twitter" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] forKey:@"iconImage"];
-        [_specifiers addObject:spec];
-
-        spec = [PSSpecifier preferenceSpecifierNamed:@"Support Developer"
-                                              target:self
-                                                 set:NULL
-                                                 get:NULL
-                                              detail:Nil
-                                                cell:PSLinkCell
-                                                edit:Nil];
-        spec->action = @selector(open_paypal);
-        [spec setProperty:@YES forKey:@"hasIcon"];
-        [spec setProperty:[UIImage imageNamed:@"paypal" inBundle:[NSBundle bundleForClass:[self class]] compatibleWithTraitCollection:nil] forKey:@"iconImage"];
-        [_specifiers addObject:spec];
-
-	}
-
-	return _specifiers;
-}
-
-- (void)open_bilibili{
-    UIApplication *app = [UIApplication sharedApplication];
-    if ([app canOpenURL:[NSURL URLWithString:@"bilibili://space/22182611"]]) {
-        [app openURL:[NSURL URLWithString:@"bilibili://space/22182611"]];
-    } else {
-        [app openURL:[NSURL URLWithString:@"https://space.bilibili.com/22182611"]];
+    if (self.releases == NULL) {
+        self.releases = [NSMutableArray new];
+        [self fetchGithubReleases];
     }
 }
-- (void)open_github{
-  UIApplication *app = [UIApplication sharedApplication];
-  [app openURL:[NSURL URLWithString:@"https://github.com/brendonjkding"]];
+
+- (void)fetchGithubReleases {
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setHTTPMethod:@"GET"];
+    [request setURL:[NSURL URLWithString:@"https://api.github.com/repos/onewayticket255/DesktopNeteaseLyric/releases"]];
+    
+    NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (data && !error) {
+            NSMutableArray *allReleases = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+
+            for (NSDictionary *release in allReleases) {
+                [self.releases addObject:release];           
+            }
+
+        }
+        else {
+            NSLog(@"mlyx FetchGithubApi Error");
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+            self.navigationItem.title =@"ChangeLog";
+        });
+    }];
+    
+    [task resume];
 }
-- (void)open_alipay{
-  UIApplication *app = [UIApplication sharedApplication];
-  [app openURL:[NSURL URLWithString:@"https://qr.alipay.com/fkx199226yyspdubbiibddc"]];
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return self.releases.count;
 }
-- (void)open_paypal{
-  UIApplication *app = [UIApplication sharedApplication];
-  [app openURL:[NSURL URLWithString:@"https://paypal.me/brend0n"]];
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
 }
-- (void)open_cydia{
-  UIApplication *app = [UIApplication sharedApplication];
-  [app openURL:[NSURL URLWithString:@"cydia://url/https://cydia.saurik.com/api/share#?source=http://brendonjkding.github.io"]];
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *cellIdentifier = @"changeLogCell";
+    NSDictionary *dataDict = self.releases[indexPath.section];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+    if (dataDict[@"body"]) {
+        [cell.textLabel setText:dataDict[@"body"]];
+    }
+    cell.textLabel.numberOfLines = 0;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
 }
-- (void)open_twitter{
-  UIApplication *app = [UIApplication sharedApplication];
-	if ([app canOpenURL:[NSURL URLWithString:@"twitter://user?screen_name=brendonjkding"]]) {
-		[app openURL:[NSURL URLWithString:@"twitter://user?screen_name=brendonjkding"]];
-	} 
-	else if ([app canOpenURL:[NSURL URLWithString:@"tweetbot:///user_profile/brendonjkding"]]) {
-		[app openURL:[NSURL URLWithString:@"tweetbot:///user_profile/brendonjkding"]];		
-	} 
-	else {
-		[app openURL:[NSURL URLWithString:@"https://mobile.twitter.com/brendonjkding"]];
-	}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    NSDictionary *jsonDict = self.releases[section];
+    return jsonDict[@"name"] ?: @"Error";
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UITableViewHeaderFooterView *view = [[UITableViewHeaderFooterView alloc] initWithReuseIdentifier:@"alphabeticalReuse"];
+    view.textLabel.font = [UIFont boldSystemFontOfSize:15];      
+    return view;
 }
 
 @end

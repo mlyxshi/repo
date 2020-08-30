@@ -1,4 +1,4 @@
-export ARCHS = arm64e arm64
+export ARCHS = arm64
 export TARGET = iphone:latest:13
 
 INSTALL_TARGET_PROCESSES = SpringBoard
@@ -9,6 +9,5 @@ SUBPROJECTS += StoreSwitcher
 SUBPROJECTS += YouTube
 SUBPROJECTS += ZhiHu
 SUBPROJECTS += BiliBili
-SUBPROJECTS += Twitter
 SUBPROJECTS += Globalize
 include $(THEOS_MAKE_PATH)/aggregate.mk

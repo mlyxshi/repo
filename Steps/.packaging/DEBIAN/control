@@ -1,0 +1,9 @@
+Package: mlyx.test
+Name: TEST
+Depends: mobilesubstrate
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: An awesome MobileSubstrate tweak!
+Maintainer: mlyx
+Author: mlyx
+Section: Tweaks
