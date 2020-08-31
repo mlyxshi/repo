@@ -1,1 +1,0 @@
-include $(THEOS)/makefiles/common.mk

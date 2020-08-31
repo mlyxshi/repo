@@ -1,9 +1,0 @@
-Package: mlyx.sslpinning
-Name: Disable SSLPinning
-Depends: mobilesubstrate,com.spark.libsparkapplist
-Version: 1.0.0
-Architecture: iphoneos-arm
-Description: Make Surge MITM Everything
-Maintainer: mlyx
-Author: nabla-c0d3
-Section: Maintain

@@ -1,3 +1,0 @@
-@interface BBLSRootViewController : UITableViewController
-
-@end
